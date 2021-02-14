@@ -26,8 +26,7 @@ router.delete("/:id", (req, res) => {
 	todoModel.findByIdAndDelete(req.params.id, (err) => {
 		if (err) {
 			console.error(err);
-		} else {
-			console.log();
+			return res.status(404).send("Błąd");
 		}
 	});
 
