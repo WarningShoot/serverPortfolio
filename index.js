@@ -15,6 +15,12 @@ mongoose.connect(process.env.DB_STRING, {
 	useCreateIndex: true,
 });
 
+app.get("/", (req, res) => {
+	return res.status(202).json({
+		object: "dziala",
+	});
+});
+
 app.use(express.json());
 app.use(cors());
 
